@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using LateNightMonos.ViewModel;
+
 using Xamarin.Forms;
 
 namespace LateNightMonos.View
 {
-    public partial class HomePage : ContentPage
+    public partial class InfoPage : ContentPage
     {
-        public HomePage()
+        public InfoPage()
         {
             InitializeComponent();
-            BindingContext = new HomeViewModel();
         }
-
     }
 }

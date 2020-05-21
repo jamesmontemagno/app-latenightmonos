@@ -13,7 +13,6 @@
     -->
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
@@ -29,25 +28,26 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <ShellContent Route="home" ContentTemplate="{DataTemplate view:HomePage}"/>
     
-     
     <!--  Your Pages  -->
-    <!--<TabBar>
-        <Tab Title="Home" Shell.NavBarIsVisible="True">
-            <ShellContent Title="tab 1" ContentTemplate="{DataTemplate view:HomePage}" />
-            <ShellContent Title="tab 2" ContentTemplate="{DataTemplate view:HomePage}" />
-        </Tab>
-        <Tab Title="Home 2">
+    <TabBar>
+        <Tab Title="Monkeys">
+            <Tab.Icon>
+                <FontImageSource Glyph="{StaticResource IconHome}"
+                                 FontFamily="FAR"/>
+            </Tab.Icon>
             <ShellContent ContentTemplate="{DataTemplate view:HomePage}" />
         </Tab>
-        <Tab Title="Home">
-            <ShellContent ContentTemplate="{DataTemplate view:HomePage}" />
+        <Tab Title="Info">
+            
+            <Tab.Icon>
+                <FontImageSource Glyph="{StaticResource IconInfo}"
+                                 FontFamily="FAS"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate view:InfoPage}" />
         </Tab>
-        <Tab Title="Home">
-            <ShellContent ContentTemplate="{DataTemplate view:HomePage}" />
-        </Tab>
-    </TabBar>-->
+       
+    </TabBar>
     <!-- Optional Templates
     // These may be provided inline as below or as separate classes.
 

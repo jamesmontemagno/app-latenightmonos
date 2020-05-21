@@ -12,7 +12,6 @@ namespace LateNightMonos
             InitializeComponent();
 
             Routing.RegisterRoute("detail", typeof(DetailPage));
-            Routing.RegisterRoute("page3", typeof(Page3));
         }
     }
 }

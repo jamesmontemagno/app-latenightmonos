@@ -1,5 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="LateNightMonos.App">
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="LateNightMonos.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
     <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="AcrylicSurface">#E6E6E6</Color>
+
+            <Color x:Key="AcrylicFrameBackgroundColor">#F1F1F1</Color>
+
+            <Color x:Key="AccentColor">#00E000</Color>
+
+            <Color x:Key="PrimaryColor">Black</Color>
+            <Color x:Key="SecondaryColor">#60000000</Color>
+            <Color x:Key="TernaryColor">#30000000</Color>
+
+            <Color x:Key="TextPrimaryColor">Black</Color>
+            <Color x:Key="TextSecondaryColor">#60000000</Color>
+            <Color x:Key="TextTernaryColor">#40000000</Color>
+            <x:String x:Key="IconInfo">&#xf129;</x:String>
+            <x:String x:Key="IconHome">&#xf004;</x:String>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
