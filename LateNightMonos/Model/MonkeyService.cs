@@ -106,5 +106,8 @@ namespace LateNightMonos.Model
             MonkeysGrouped = new ObservableCollection<Grouping<string, Monkey>>(sorted);
 
         }
+
+        public static Monkey GetMonkey(string id) =>
+            Monkeys.FirstOrDefault(m => m.Name == id);
     }
 }

@@ -9,6 +9,8 @@
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:viewmodel="clr-namespace:LateNightMonos.ViewModel"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
     Title="Monkeys"
     x:DataType="viewmodel:HomeViewModel"
     BackgroundColor="{StaticResource AcrylicSurface}"
@@ -29,8 +31,8 @@
                 <pancake:PancakeView
                     BackgroundColor="{StaticResource AcrylicSurface}"
                     CornerRadius="20,20,0,0"
-                    Elevation="4"
-                    HasShadow="True"
+                    Elevation="0"
+                    HasShadow="False"
                     HeightRequest="20" />
             </StackLayout>
         </CollectionView.Header>
@@ -42,7 +44,8 @@
                         LightThemeBackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
                         MaterialTheme="Acrylic">
                         <sharpnado:MaterialFrame.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:HomeViewModel}}, Path=GoToMonkeyCommand}"/>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:HomeViewModel}}, Path=GoToMonkeyCommand}"
+                                                  CommandParameter="{Binding Name}"/>
                         </sharpnado:MaterialFrame.GestureRecognizers>
                         <Grid ColumnSpacing="16">
                             <Grid.ColumnDefinitions>
@@ -62,9 +65,9 @@
                             <StackLayout Grid.Column="1"
                                          VerticalOptions="Center">
                                 <Label
-                                    FontSize="48"
+                                    FontSize="36"
                                     Text="{Binding Name}"
-                                    FontFamily="Zoo"
+                                    FontFamily="Monkey"
                                     TextColor="{StaticResource TextPrimaryColor}" />
                                 <Label
                                     FontSize="Medium"

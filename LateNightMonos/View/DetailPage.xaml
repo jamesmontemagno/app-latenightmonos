@@ -5,32 +5,98 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:viewmodel="clr-namespace:LateNightMonos.ViewModel"
+    BackgroundColor="{StaticResource NavigationPrimary}"
     Shell.NavBarIsVisible="True"
     Shell.PresentationMode="ModalAnimated"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
     mc:Ignorable="d">
     <d:ContentPage.BindingContext>
         <viewmodel:DetailViewModel />
     </d:ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center">
-            <Label
-                FontSize="Large"
-                HorizontalOptions="Center"
-                Text="{Binding Data}" />
-            <Label
-                FontSize="Large"
-                HorizontalOptions="Center"
-                Text="{Binding Phone}" />
+        <ScrollView>
+            <Grid Padding="0,12,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label
+                    FontSize="44"
+                    HorizontalOptions="Center"
+                    Text="{Binding Monkey.Name}"
+                    FontFamily="Zoo"
+                    TextColor="White" />
+                <pancake:PancakeView
+                    HeightRequest="44"
+                    WidthRequest="44"
+                    CornerRadius="22"
+                    Margin="0,0,12,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    BackgroundColor="{StaticResource AcrylicSurface}">
+                    <pancake:PancakeView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding GoBackCommand}"/>
+                    </pancake:PancakeView.GestureRecognizers>
+                    <Label Text="{StaticResource IconClose}"
+                           FontFamily="FAS"
+                           TextColor="{StaticResource TextSecondaryColor}"
+                           FontSize="Medium"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
 
-            <Label Text="{Binding Count}"
-                   FontSize="Large"
-                   HorizontalOptions="Center"/>
-
-            <Button Command="{Binding IncreaseCommand}" Text="Increase" />
-
-
-            <Button Command="{Binding GoBackCommand}" Text="Go Back" />
-        </StackLayout>
+                </pancake:PancakeView>
+                <pancake:PancakeView
+                    Grid.Row="1"
+                    BackgroundColor="{StaticResource AcrylicSurface}"
+                    CornerRadius="20,20,0,0"
+                    Elevation="4"
+                    HasShadow="True"
+                    HeightRequest="20">
+                    <StackLayout VerticalOptions="Center">
+                        <Grid
+                            Padding="12,12"
+                            BindingContext="{Binding Monkey}"
+                            HeightRequest="200">
+                            <sharpnado:MaterialFrame
+                                CornerRadius="10"
+                                LightThemeBackgroundColor="{StaticResource AcrylicFrameBackgroundColor}"
+                                MaterialTheme="Acrylic">
+                                <Grid ColumnSpacing="16">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".4*" />
+                                        <ColumnDefinition Width=".6*" />
+                                    </Grid.ColumnDefinitions>
+                                    <pancake:PancakeView
+                                        BorderGradientAngle="45"
+                                        BorderGradientEndColor="{StaticResource NavigationPrimary}"
+                                        BorderGradientStartColor="Yellow"
+                                        BorderThickness="10"
+                                        CornerRadius="30,0,0,30"
+                                        Elevation="8"
+                                        HasShadow="True">
+                                        <Image Aspect="AspectFill" Source="{Binding Image}" />
+                                    </pancake:PancakeView>
+                                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                        <Label
+                                            FontFamily="Monkey"
+                                            FontSize="36"
+                                            Text="{Binding Name}"
+                                            TextColor="{StaticResource TextPrimaryColor}" />
+                                        <Label
+                                            FontSize="Medium"
+                                            Text="{Binding Location}"
+                                            TextColor="{StaticResource TextSecondaryColor}" />
+                                    </StackLayout>
+                                </Grid>
+                            </sharpnado:MaterialFrame>
+                        </Grid>
+                    </StackLayout>
+                </pancake:PancakeView>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

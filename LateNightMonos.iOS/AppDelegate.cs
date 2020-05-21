@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Sharpnado.MaterialFrame;
+using Sharpnado.MaterialFrame.iOS;
 using UIKit;
 
 namespace LateNightMonos.iOS
@@ -24,6 +26,8 @@ namespace LateNightMonos.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+
+            iOSMaterialFrameRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

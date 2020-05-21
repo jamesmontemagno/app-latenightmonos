@@ -24,6 +24,7 @@
             <Color x:Key="TextTernaryColor">#40000000</Color>
             <x:String x:Key="IconInfo">&#xf129;</x:String>
             <x:String x:Key="IconHome">&#xf004;</x:String>
+            <x:String x:Key="IconClose">&#xf00d;</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
