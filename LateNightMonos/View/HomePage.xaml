@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="LateNightMonos.View.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Home">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center"
+                     Padding="10">
+            <Entry
+                x:Name="EntryInfo"
+                Text="Home Page"
+                FontSize="Large"
+                HorizontalOptions="FillAndExpand"/>
+
+            <Label Text="{Binding Count}"
+                   HorizontalOptions="Center"/>
+
+            <Button Clicked="Button_Clicked"
+                    Text="Navigate" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

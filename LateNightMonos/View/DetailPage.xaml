@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="LateNightMonos.View.DetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewmodel="clr-namespace:LateNightMonos.ViewModel"
+    Shell.NavBarIsVisible="True"
+    Shell.PresentationMode="ModalAnimated"
+    mc:Ignorable="d">
+    <d:ContentPage.BindingContext>
+        <viewmodel:DetailViewModel />
+    </d:ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Label
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="{Binding Data}" />
+            <Label
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="{Binding Phone}" />
+
+            <Label Text="{Binding Count}"
+                   FontSize="Large"
+                   HorizontalOptions="Center"/>
+
+            <Button Command="{Binding IncreaseCommand}" Text="Increase" />
+
+
+            <Button Command="{Binding GoBackCommand}" Text="Go Back" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
