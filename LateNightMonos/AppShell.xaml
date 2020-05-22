@@ -31,7 +31,7 @@
     
     <!--  Your Pages  -->
     <TabBar>
-        <Tab Title="Monkeys">
+        <Tab Route="monkeys" Title="Monkeys">
             <Tab.Icon>
                 <FontImageSource Glyph="{StaticResource IconHome}"
                                  FontFamily="FAR"/>

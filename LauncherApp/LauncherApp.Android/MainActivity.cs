@@ -7,16 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace LateNightMonos.Droid
+namespace LauncherApp.Droid
 {
-    [Activity(Label = "LateNightMonos",
-        Icon = "@mipmap/icon", Theme = "@style/MainTheme",
-        LaunchMode = LaunchMode.SingleTask,
-        MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    [IntentFilter(new[] { Android.Content.Intent.ActionView },
-        Categories = new[] { Android.Content.Intent.CategoryDefault, Android.Content.Intent.CategoryBrowsable },
-        DataScheme = "latenightmonos")]
-    // latenightmonos://monkeys/detail?id=Baboon"
+    [Activity(Label = "LauncherApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -26,7 +19,6 @@ namespace LateNightMonos.Droid
 
             base.OnCreate(savedInstanceState);
 
-            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

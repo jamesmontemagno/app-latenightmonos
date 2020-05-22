@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
-using Sharpnado.MaterialFrame;
-using Sharpnado.MaterialFrame.iOS;
 using UIKit;
 
-namespace LateNightMonos.iOS
+namespace LauncherApp.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -24,21 +22,10 @@ namespace LateNightMonos.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
-
-            iOSMaterialFrameRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
-        }
-
-        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
-        {
-            Xamarin.Forms.Application.Current.SendOnAppLinkRequestReceived(new Uri(url.AbsoluteString));
-           
-            return true;
-
         }
     }
 }

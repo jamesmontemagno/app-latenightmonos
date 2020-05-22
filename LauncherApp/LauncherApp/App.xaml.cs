@@ -1,26 +1,16 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-namespace LateNightMonos
+
+namespace LauncherApp
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
-        }
-
-        protected override async void OnAppLinkRequestReceived(Uri uri)
-        {
-            base.OnAppLinkRequestReceived(uri);
-
-            if (uri.Host == "monkeys" && uri.AbsolutePath == "/detail")
-                await Shell.Current.GoToAsync($"//{uri.Host}{uri.PathAndQuery}");
-            
-            
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
