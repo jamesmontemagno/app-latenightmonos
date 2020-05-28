@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{61DAA1D9-5FA4-4852-8D56-D9CB259D6B9D}</ProjectGuid>
+    <ProjectGuid>{CCC48F6F-1D6A-4832-AF56-23F2D7C8AE8E}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{89a4fe7c-635d-49c9-8d8c-5cd363c0d68d}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LateNightMonos.iOS</RootNamespace>
+    <RootNamespace>ShellIntro.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>LateNightMonos.iOS</AssemblyName>
+    <AssemblyName>ShellIntro.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
@@ -132,23 +132,17 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Refractored.MvvmHelpers">
       <Version>1.6.2</Version>
     </PackageReference>
-    <PackageReference Include="Sharpnado.MaterialFrame">
-      <Version>1.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Forms.PancakeView">
-      <Version>1.4.2</Version>
-    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.800" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\LateNightMonos\LateNightMonos.csproj">
-      <Project>{8677E481-EBC6-4DDD-9C14-A620D77F3B32}</Project>
-      <Name>LateNightMonos</Name>
+    <ProjectReference Include="..\ShellIntro\ShellIntro.csproj">
+      <Project>{D555ACE9-460B-497B-B726-232C0B0B0754}</Project>
+      <Name>ShellIntro</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
